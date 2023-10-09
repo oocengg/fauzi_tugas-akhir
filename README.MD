@@ -1,7 +1,6 @@
 # Manajemen Tugas Akhir
 
 Skripsi (Tugas Akhir) - Muh. Fauzi Ramadhan Nugraha
-format markdown berisi identitas diri, abstrak skripsi, cara setup dll
 <br><br>
 Identitas Penulis :
 - Nama  : Muh. Fauzi Ramadhan Nugraha
@@ -9,11 +8,9 @@ Identitas Penulis :
 - Kelas : TI-4E
 
 
-Moodie - Mood Journal Tracker merupakan sebuah aplikasi mood tracker berbasis aplikasi mobile yang bertujuan untuk mencatat dan menyimpan data record mood pengguna aplikasi secara berkala setiap harinya.
-<br><br>
-Aplikasi ini dibuat dengan tujuan untuk menyimpan data data mood harian dari pengguna agar pengguna mampu mengecek data mood mereka dan meninjau apa apa saja yang terjadi dalam keseharian mereka sesuai dengan mood yang didaftarkan.
-<br><br>
-Selan dari itu, kami juga memiliki tujuan agar dapat membuat sebuah aplikasi yang mampu membantu para psikiater diluar sana untuk melakukan tracking perasaan pasien selama menjalani terapi.
+Aplikasi Manajemen Tugas Akhir adalah salah satu solusi mobile yang memudahkan mahasiswa dan dosen dalam mengelola jalannya tugas akhir dan bimbingan, mulai dari pencatatan judul & pemilihan dosen pembimbing, penentuan jadwal bimbingan, laporan pencatatan bimbingan, notifikasi dan jadwal seminal proposal dan hasil, hingga lampiran kelulusan. Dengan antarmuka yang user-friendly dan notifikasi yang tepat waktu, aplikasi ini memastikan mahasiswa dan dosen tetap on track, dan dapat melihat history yang telah dilakukan selama proses skripsi.
+
+
 
 
 ## Abstrak Skripsi
