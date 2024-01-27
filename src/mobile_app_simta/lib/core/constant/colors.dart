@@ -7,6 +7,10 @@ class AppColors {
   static const Color baseShimmerColor = Color(0xFFF1EFEF);
   static const Color highlightShimmerColor = Color(0xFFE7E5E5);
 
+  // Basic Color
+  static const Color white = Color(0xffFFFFFF);
+  static const Color black = Color(0xff000000);
+
   // Primary Color
   static const Color primary50 = Color(0xffEEF0FD);
   static const Color primary100 = Color(0xffDEE1FD);
