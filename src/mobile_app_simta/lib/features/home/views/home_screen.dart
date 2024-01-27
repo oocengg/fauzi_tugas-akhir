@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:mobile_app_simta/core/constant/colors.dart';
-import 'package:mobile_app_simta/core/constant/font_size.dart';
 import 'package:mobile_app_simta/features/home/widgets/section/bimbingan_section.dart';
 import 'package:mobile_app_simta/features/home/widgets/section/heading_section.dart';
 import 'package:mobile_app_simta/features/home/widgets/section/news_section.dart';

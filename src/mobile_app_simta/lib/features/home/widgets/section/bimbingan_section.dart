@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mobile_app_simta/core/constant/colors.dart';
 import 'package:mobile_app_simta/core/constant/font_size.dart';
 import 'package:mobile_app_simta/features/home/widgets/item_widget/bimbingan_item.dart';
+import 'package:mobile_app_simta/features/log_bimbingan/views/log_bimbingan_screen.dart';
 
 class BimbinganSection extends StatelessWidget {
   const BimbinganSection({super.key});
@@ -15,10 +16,10 @@ class BimbinganSection extends StatelessWidget {
       ),
       child: Column(
         children: [
-          const Row(
+          Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text(
+              const Text(
                 'Log Bimbingan',
                 style: TextStyle(
                   fontSize: AppFontSize.heading4,
@@ -28,14 +29,24 @@ class BimbinganSection extends StatelessWidget {
                 ),
                 maxLines: 1,
               ),
-              Text(
-                'Lihat Semua',
-                style: TextStyle(
-                  fontSize: AppFontSize.text,
-                  overflow: TextOverflow.ellipsis,
-                  color: AppColors.black,
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const LogBimbinganScreen(),
+                    ),
+                  );
+                },
+                child: const Text(
+                  'Lihat Semua',
+                  style: TextStyle(
+                    fontSize: AppFontSize.text,
+                    overflow: TextOverflow.ellipsis,
+                    color: AppColors.black,
+                  ),
+                  maxLines: 1,
                 ),
-                maxLines: 1,
               ),
             ],
           ),
@@ -43,6 +54,7 @@ class BimbinganSection extends StatelessWidget {
             height: 16,
           ),
           bimbinganItem(
+            context,
             'Diskusi Scope Aplikasi SIM-TA',
             'Habibie Ed Dien, S.Kom, M.T.',
             '12-12-2023',
@@ -52,6 +64,7 @@ class BimbinganSection extends StatelessWidget {
             height: 14,
           ),
           bimbinganItem(
+            context,
             'Diskusi Scope Aplikasi SIM-TA',
             'Habibie Ed Dien, S.Kom, M.T.',
             '12-12-2023',
@@ -61,6 +74,7 @@ class BimbinganSection extends StatelessWidget {
             height: 14,
           ),
           bimbinganItem(
+            context,
             'Diskusi Scope Aplikasi SIM-TA',
             'Habibie Ed Dien, S.Kom, M.T.',
             '12-12-2023',

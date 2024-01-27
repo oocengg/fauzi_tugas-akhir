@@ -4,7 +4,7 @@ import 'package:mobile_app_simta/core/constant/colors.dart';
 import 'package:mobile_app_simta/core/constant/font_size.dart';
 import 'package:mobile_app_simta/features/log_bimbingan/views/detail_log_bimbingan_screen.dart';
 
-Widget bimbinganItem(
+Widget logBimbinganItem(
   BuildContext context,
   String title,
   String dosenPembimbing,
