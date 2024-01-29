@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:mobile_app_simta/core/state/finite_state.dart';
 import 'package:mobile_app_simta/features/home/views/home_screen.dart';
+import 'package:mobile_app_simta/features/notification/views/notification_screen.dart';
 import 'package:mobile_app_simta/features/pasca_proposal/views/pasca_proposal_screen.dart';
 import 'package:mobile_app_simta/features/pra_proposal/views/pra_proposal_screen.dart';
 
@@ -40,7 +41,7 @@ class DashboardProvider with ChangeNotifier {
   final List<Widget> pages = [
     const HomeScreen(),
     const PraProposalScreen(),
-    const HomeScreen(),
+    const NotificationScreen(),
     const PascaProposalScreen(),
     const HomeScreen(),
   ];
