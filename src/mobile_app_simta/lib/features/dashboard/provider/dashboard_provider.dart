@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:mobile_app_simta/core/state/finite_state.dart';
 import 'package:mobile_app_simta/features/home/views/home_screen.dart';
+import 'package:mobile_app_simta/features/pasca_proposal/views/pasca_proposal_screen.dart';
 import 'package:mobile_app_simta/features/pra_proposal/views/pra_proposal_screen.dart';
 
 class DashboardProvider with ChangeNotifier {
@@ -40,7 +41,7 @@ class DashboardProvider with ChangeNotifier {
     const HomeScreen(),
     const PraProposalScreen(),
     const HomeScreen(),
-    const HomeScreen(),
+    const PascaProposalScreen(),
     const HomeScreen(),
   ];
 
