@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:mobile_app_simta/core/constant/colors.dart';
+import 'package:mobile_app_simta/features/log_bimbingan/views/add_log_bimbingan_screen.dart';
 import 'package:mobile_app_simta/features/log_bimbingan/widgets/item_widget/log_bimbingan_item.dart';
 
 class LogBimbinganScreen extends StatelessWidget {
@@ -24,6 +25,16 @@ class LogBimbinganScreen extends StatelessWidget {
           ),
         ),
         shadowColor: AppColors.black.withOpacity(0.2),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          _showBottomSheet(context);
+        },
+        backgroundColor: AppColors.primary500,
+        child: const Icon(
+          FontAwesomeIcons.plus,
+          color: AppColors.white,
+        ),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16),
@@ -82,6 +93,16 @@ class LogBimbinganScreen extends StatelessWidget {
           ],
         ),
       ),
+    );
+  }
+
+  void _showBottomSheet(BuildContext context) {
+    showModalBottomSheet(
+      context: context,
+      isScrollControlled: true,
+      builder: (BuildContext context) {
+        return const AddLogBimbinganScreen();
+      },
     );
   }
 }
