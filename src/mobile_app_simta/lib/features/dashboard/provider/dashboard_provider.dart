@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:mobile_app_simta/core/state/finite_state.dart';
 import 'package:mobile_app_simta/features/home/views/home_screen.dart';
+import 'package:mobile_app_simta/features/pra_proposal/views/pra_proposal_screen.dart';
 
 class DashboardProvider with ChangeNotifier {
   int selectedIndex = 0;
@@ -37,7 +38,7 @@ class DashboardProvider with ChangeNotifier {
   // Pages untuk icon icon diatas
   final List<Widget> pages = [
     const HomeScreen(),
-    const HomeScreen(),
+    const PraProposalScreen(),
     const HomeScreen(),
     const HomeScreen(),
     const HomeScreen(),
