@@ -5,6 +5,7 @@ import 'package:mobile_app_simta/features/home/views/home_screen.dart';
 import 'package:mobile_app_simta/features/notification/views/notification_screen.dart';
 import 'package:mobile_app_simta/features/pasca_proposal/views/pasca_proposal_screen.dart';
 import 'package:mobile_app_simta/features/pra_proposal/views/pra_proposal_screen.dart';
+import 'package:mobile_app_simta/features/profile/views/profile_screen.dart';
 
 class DashboardProvider with ChangeNotifier {
   int selectedIndex = 0;
@@ -43,7 +44,7 @@ class DashboardProvider with ChangeNotifier {
     const PraProposalScreen(),
     const NotificationScreen(),
     const PascaProposalScreen(),
-    const HomeScreen(),
+    const ProfileScreen(),
   ];
 
   // Set Pages yang dipilih
