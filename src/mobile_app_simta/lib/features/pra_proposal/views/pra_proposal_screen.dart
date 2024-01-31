@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mobile_app_simta/core/constant/font_size.dart';
+import 'package:mobile_app_simta/features/pra_proposal/views/daftar_kuota_dosen/views/daftar_kuota_dosen_screen.dart';
 import 'package:mobile_app_simta/features/pra_proposal/widgets/item_widget/pra_proposal_item.dart';
 
 class PraProposalScreen extends StatelessWidget {
@@ -32,6 +33,14 @@ class PraProposalScreen extends StatelessWidget {
                 context,
                 'assets/images/pra_1.png',
                 'Daftar Kuota Dosen',
+                () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const DaftarKuotaDosenScreen(),
+                    ),
+                  );
+                },
               ),
               const SizedBox(
                 height: 16,
@@ -40,6 +49,7 @@ class PraProposalScreen extends StatelessWidget {
                 context,
                 'assets/images/pra_2.png',
                 'Usulan Topik Dosen',
+                () {},
               ),
               const SizedBox(
                 height: 16,
@@ -48,6 +58,7 @@ class PraProposalScreen extends StatelessWidget {
                 context,
                 'assets/images/pra_3.png',
                 'Pendaftaran Seminar Proposal',
+                () {},
               ),
               const SizedBox(
                 height: 16,
@@ -56,6 +67,7 @@ class PraProposalScreen extends StatelessWidget {
                 context,
                 'assets/images/pra_4.png',
                 'Jadwal Seminar Proposal',
+                () {},
               ),
               const SizedBox(
                 height: 16,
@@ -64,6 +76,7 @@ class PraProposalScreen extends StatelessWidget {
                 context,
                 'assets/images/pra_5.png',
                 'Seminar Proposal',
+                () {},
               ),
               const SizedBox(
                 height: 16,
