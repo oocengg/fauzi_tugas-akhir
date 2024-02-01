@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mobile_app_simta/core/constant/font_size.dart';
 import 'package:mobile_app_simta/features/pra_proposal/views/daftar_kuota_dosen/views/daftar_kuota_dosen_screen.dart';
+import 'package:mobile_app_simta/features/pra_proposal/views/usulan_topik_dosen/daftar_kuota_dosen/views/usulan_topik_dosen.dart';
 import 'package:mobile_app_simta/features/pra_proposal/widgets/item_widget/pra_proposal_item.dart';
 
 class PraProposalScreen extends StatelessWidget {
@@ -49,7 +50,14 @@ class PraProposalScreen extends StatelessWidget {
                 context,
                 'assets/images/pra_2.png',
                 'Usulan Topik Dosen',
-                () {},
+                () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const UsulanTopikDosenScreen(),
+                    ),
+                  );
+                },
               ),
               const SizedBox(
                 height: 16,
