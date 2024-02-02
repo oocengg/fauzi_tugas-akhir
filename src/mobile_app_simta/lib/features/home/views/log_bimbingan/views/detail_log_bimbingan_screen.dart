@@ -13,6 +13,9 @@ class DetailLogBimbinganScreen extends StatelessWidget {
         centerTitle: false,
         title: const Text(
           'Detail Log Bimbingan',
+          style: TextStyle(
+            color: AppColors.white,
+          ),
         ),
         leading: IconButton(
           onPressed: () {
@@ -20,9 +23,10 @@ class DetailLogBimbinganScreen extends StatelessWidget {
           },
           icon: const Icon(
             FontAwesomeIcons.chevronLeft,
-            color: AppColors.black,
+            color: AppColors.white,
           ),
         ),
+        backgroundColor: AppColors.primary500,
         shadowColor: AppColors.black.withOpacity(0.2),
       ),
       body: Padding(

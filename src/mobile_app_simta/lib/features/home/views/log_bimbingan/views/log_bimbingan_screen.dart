@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:mobile_app_simta/core/constant/colors.dart';
-import 'package:mobile_app_simta/features/log_bimbingan/views/add_log_bimbingan_screen.dart';
-import 'package:mobile_app_simta/features/log_bimbingan/widgets/item_widget/log_bimbingan_item.dart';
+import 'package:mobile_app_simta/features/home/views/log_bimbingan/views/add_log_bimbingan_screen.dart';
+import 'package:mobile_app_simta/features/home/views/log_bimbingan/widgets/item_widget/log_bimbingan_item.dart';
 
 class LogBimbinganScreen extends StatelessWidget {
   const LogBimbinganScreen({super.key});
@@ -14,6 +14,9 @@ class LogBimbinganScreen extends StatelessWidget {
         centerTitle: false,
         title: const Text(
           'Log Bimbingan',
+          style: TextStyle(
+            color: AppColors.white,
+          ),
         ),
         leading: IconButton(
           onPressed: () {
@@ -21,9 +24,10 @@ class LogBimbinganScreen extends StatelessWidget {
           },
           icon: const Icon(
             FontAwesomeIcons.chevronLeft,
-            color: AppColors.black,
+            color: AppColors.white,
           ),
         ),
+        backgroundColor: AppColors.primary500,
         shadowColor: AppColors.black.withOpacity(0.2),
       ),
       floatingActionButton: FloatingActionButton(

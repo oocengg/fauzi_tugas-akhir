@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mobile_app_simta/core/constant/colors.dart';
 import 'package:mobile_app_simta/core/constant/font_size.dart';
 import 'package:mobile_app_simta/features/home/widgets/item_widget/bimbingan_item.dart';
-import 'package:mobile_app_simta/features/log_bimbingan/views/log_bimbingan_screen.dart';
+import 'package:mobile_app_simta/features/home/views/log_bimbingan/views/log_bimbingan_screen.dart';
 
 class BimbinganSection extends StatelessWidget {
   const BimbinganSection({super.key});

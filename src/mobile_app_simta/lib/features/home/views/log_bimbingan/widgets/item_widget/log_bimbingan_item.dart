@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:mobile_app_simta/core/constant/colors.dart';
 import 'package:mobile_app_simta/core/constant/font_size.dart';
-import 'package:mobile_app_simta/features/log_bimbingan/views/detail_log_bimbingan_screen.dart';
+import 'package:mobile_app_simta/features/home/views/log_bimbingan/views/detail_log_bimbingan_screen.dart';
 
 Widget logBimbinganItem(
   BuildContext context,

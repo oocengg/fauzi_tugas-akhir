@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:mobile_app_simta/core/constant/colors.dart';
 import 'package:mobile_app_simta/core/constant/font_size.dart';
+import 'package:mobile_app_simta/features/dashboard/provider/dashboard_provider.dart';
 import 'package:mobile_app_simta/features/home/widgets/item_widget/notification_item.dart';
+import 'package:provider/provider.dart';
 
 class NotificationSection extends StatelessWidget {
   const NotificationSection({super.key});
@@ -15,10 +17,10 @@ class NotificationSection extends StatelessWidget {
       ),
       child: Column(
         children: [
-          const Row(
+          Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text(
+              const Text(
                 'Notifikasi',
                 style: TextStyle(
                   fontSize: AppFontSize.heading4,
@@ -28,14 +30,20 @@ class NotificationSection extends StatelessWidget {
                 ),
                 maxLines: 1,
               ),
-              Text(
-                'Lihat Semua',
-                style: TextStyle(
-                  fontSize: AppFontSize.text,
-                  overflow: TextOverflow.ellipsis,
-                  color: AppColors.black,
+              GestureDetector(
+                onTap: () {
+                  Provider.of<DashboardProvider>(context, listen: false)
+                      .setSelectedIndex(context, 2);
+                },
+                child: const Text(
+                  'Lihat Semua',
+                  style: TextStyle(
+                    fontSize: AppFontSize.text,
+                    overflow: TextOverflow.ellipsis,
+                    color: AppColors.black,
+                  ),
+                  maxLines: 1,
                 ),
-                maxLines: 1,
               ),
             ],
           ),
