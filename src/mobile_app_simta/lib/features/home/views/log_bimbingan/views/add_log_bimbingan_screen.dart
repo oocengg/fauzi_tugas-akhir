@@ -58,7 +58,9 @@ class _AddLogBimbinganScreenState extends State<AddLogBimbinganScreen> {
                   ),
                 ],
               ),
-              const Divider(),
+              const Divider(
+                color: AppColors.neutral100,
+              ),
               const SizedBox(
                 height: 8,
               ),

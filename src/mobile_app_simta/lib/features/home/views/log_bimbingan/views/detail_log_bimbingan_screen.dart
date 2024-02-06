@@ -145,7 +145,9 @@ class DetailLogBimbinganScreen extends StatelessWidget {
             const SizedBox(
               height: 14,
             ),
-            const Divider(),
+            const Divider(
+              color: AppColors.neutral100,
+            ),
             const SizedBox(
               height: 14,
             ),

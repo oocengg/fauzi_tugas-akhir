@@ -36,7 +36,9 @@ class PendaftaranSeminarProposalScreen extends StatelessWidget {
           SizedBox(
             height: 16,
           ),
-          Divider(),
+          Divider(
+            color: AppColors.neutral100,
+          ),
           SizedBox(
             height: 16,
           ),

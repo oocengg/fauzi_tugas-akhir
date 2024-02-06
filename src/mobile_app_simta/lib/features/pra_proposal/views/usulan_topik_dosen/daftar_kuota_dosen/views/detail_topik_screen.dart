@@ -137,7 +137,9 @@ class DetailTopikScreen extends StatelessWidget {
           const SizedBox(
             height: 16,
           ),
-          const Divider(),
+          const Divider(
+            color: AppColors.neutral100,
+          ),
           const SizedBox(
             height: 16,
           ),

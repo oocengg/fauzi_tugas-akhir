@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mobile_app_simta/core/constant/font_size.dart';
 import 'package:mobile_app_simta/features/pra_proposal/views/daftar_kuota_dosen/views/daftar_kuota_dosen_screen.dart';
 import 'package:mobile_app_simta/features/pra_proposal/views/pendaftaran_seminar_proposal/views/pendaftaran_seminar_proposal_screen.dart';
+import 'package:mobile_app_simta/features/pra_proposal/views/ujian_seminar_proposal/views/ujian_seminar_proposal_screen.dart';
 import 'package:mobile_app_simta/features/pra_proposal/views/usulan_topik_dosen/daftar_kuota_dosen/views/usulan_topik_dosen.dart';
 import 'package:mobile_app_simta/features/pra_proposal/widgets/item_widget/pra_proposal_item.dart';
 
@@ -93,7 +94,14 @@ class PraProposalScreen extends StatelessWidget {
                 context,
                 'assets/images/pra_5.png',
                 'Seminar Proposal',
-                () {},
+                () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const UjianSeminarProposalScreen(),
+                    ),
+                  );
+                },
               ),
               const SizedBox(
                 height: 16,
