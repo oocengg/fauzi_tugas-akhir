@@ -17,7 +17,15 @@ Widget dosenItem(
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(14),
-        color: AppColors.neutral100,
+        color: AppColors.white,
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(0.07),
+            spreadRadius: 0,
+            blurRadius: 20,
+            offset: const Offset(4, 4),
+          ),
+        ],
       ),
       child: Column(
         children: [
