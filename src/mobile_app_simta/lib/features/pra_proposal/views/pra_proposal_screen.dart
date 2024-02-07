@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mobile_app_simta/core/constant/font_size.dart';
 import 'package:mobile_app_simta/features/pra_proposal/views/daftar_kuota_dosen/views/daftar_kuota_dosen_screen.dart';
 import 'package:mobile_app_simta/features/pra_proposal/views/pendaftaran_seminar_proposal/views/pendaftaran_seminar_proposal_screen.dart';
+import 'package:mobile_app_simta/features/pra_proposal/views/proposal_saya/views/proposal_saya_screen.dart';
 import 'package:mobile_app_simta/features/pra_proposal/views/ujian_seminar_proposal/views/ujian_seminar_proposal_screen.dart';
 import 'package:mobile_app_simta/features/pra_proposal/views/usulan_topik_dosen/daftar_kuota_dosen/views/usulan_topik_dosen.dart';
 import 'package:mobile_app_simta/features/pra_proposal/widgets/item_widget/pra_proposal_item.dart';
@@ -66,6 +67,22 @@ class PraProposalScreen extends StatelessWidget {
               ),
               praProposalItem(
                 context,
+                'assets/images/pra_4.png',
+                'Proposal Saya',
+                () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const ProposalSayaScreen(),
+                    ),
+                  );
+                },
+              ),
+              const SizedBox(
+                height: 16,
+              ),
+              praProposalItem(
+                context,
                 'assets/images/pra_3.png',
                 'Pendaftaran Seminar Proposal',
                 () {
@@ -77,15 +94,6 @@ class PraProposalScreen extends StatelessWidget {
                     ),
                   );
                 },
-              ),
-              const SizedBox(
-                height: 16,
-              ),
-              praProposalItem(
-                context,
-                'assets/images/pra_4.png',
-                'Jadwal Seminar Proposal',
-                () {},
               ),
               const SizedBox(
                 height: 16,
