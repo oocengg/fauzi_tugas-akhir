@@ -3,6 +3,10 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:mobile_app_simta/core/constant/colors.dart';
 import 'package:mobile_app_simta/core/keys/navigator_key.dart';
 import 'package:mobile_app_simta/features/dashboard/provider/dashboard_provider.dart';
+import 'package:mobile_app_simta/features/home/provider/bimbingan_provider.dart';
+import 'package:mobile_app_simta/features/home/provider/heading_provider.dart';
+import 'package:mobile_app_simta/features/home/provider/news_provider.dart';
+import 'package:mobile_app_simta/features/home/provider/notification_provider.dart';
 import 'package:mobile_app_simta/features/splash/views/splash_screen.dart';
 import 'package:provider/provider.dart';
 
@@ -15,6 +19,18 @@ class MyApp extends StatelessWidget {
       providers: [
         ChangeNotifierProvider(
           create: (context) => DashboardProvider(),
+        ),
+        ChangeNotifierProvider(
+          create: (context) => HeadingProvider(),
+        ),
+        ChangeNotifierProvider(
+          create: (context) => NewsProvider(),
+        ),
+        ChangeNotifierProvider(
+          create: (context) => NotificationProvider(),
+        ),
+        ChangeNotifierProvider(
+          create: (context) => BimbinganProvider(),
         ),
       ],
       child: MaterialApp(

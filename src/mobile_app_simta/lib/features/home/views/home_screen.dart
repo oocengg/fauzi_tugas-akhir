@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:mobile_app_simta/core/constant/colors.dart';
+import 'package:mobile_app_simta/features/home/provider/bimbingan_provider.dart';
+import 'package:mobile_app_simta/features/home/provider/heading_provider.dart';
+import 'package:mobile_app_simta/features/home/provider/news_provider.dart';
+import 'package:mobile_app_simta/features/home/provider/notification_provider.dart';
 import 'package:mobile_app_simta/features/home/widgets/section/bimbingan_section.dart';
 import 'package:mobile_app_simta/features/home/widgets/section/heading_section.dart';
 import 'package:mobile_app_simta/features/home/widgets/section/news_section.dart';
 import 'package:mobile_app_simta/features/home/widgets/section/notification_section.dart';
+import 'package:provider/provider.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -13,6 +18,18 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  @override
+  void initState() {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      context.read<HeadingProvider>().getHeadingData();
+      context.read<NewsProvider>().getNewsData();
+      context.read<NotificationProvider>().getNotificationData();
+      context.read<BimbinganProvider>().getBimbinganData();
+    });
+
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
