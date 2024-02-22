@@ -7,6 +7,7 @@ import 'package:mobile_app_simta/features/home/provider/bimbingan_provider.dart'
 import 'package:mobile_app_simta/features/home/provider/heading_provider.dart';
 import 'package:mobile_app_simta/features/home/provider/news_provider.dart';
 import 'package:mobile_app_simta/features/home/provider/notification_provider.dart';
+import 'package:mobile_app_simta/features/home/views/log_bimbingan/provider/log_bimbingan_provider.dart';
 import 'package:mobile_app_simta/features/splash/views/splash_screen.dart';
 import 'package:provider/provider.dart';
 
@@ -31,6 +32,9 @@ class MyApp extends StatelessWidget {
         ),
         ChangeNotifierProvider(
           create: (context) => BimbinganProvider(),
+        ),
+        ChangeNotifierProvider(
+          create: (context) => LogBimbinganProvider(),
         ),
       ],
       child: MaterialApp(

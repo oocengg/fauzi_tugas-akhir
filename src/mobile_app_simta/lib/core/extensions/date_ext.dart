@@ -16,6 +16,14 @@ String formatDateEEEEddMMyyyy(String dateStr) {
   return formattedDate;
 }
 
+// Format Date into Indonesian Output : 01 Jan 2022
+String formatDateddMMMMyyyy(String dateStr) {
+  initializeDateFormatting('id_ID', null);
+  DateTime date = DateTime.parse(dateStr);
+  String formattedDate = DateFormat("dd MMM yyyy", 'id_ID').format(date);
+  return formattedDate;
+}
+
 // Format Date Output : 01
 String formatDatedd(String dateStr) {
   DateTime date = DateFormat("dd-MM-yyyy").parse(dateStr);
