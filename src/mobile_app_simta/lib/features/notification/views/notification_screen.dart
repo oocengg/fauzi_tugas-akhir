@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:mobile_app_simta/core/constant/colors.dart';
 import 'package:mobile_app_simta/core/constant/font_size.dart';
 import 'package:mobile_app_simta/features/notification/widgets/item_widget/main_notification_item.dart';
 
@@ -13,12 +15,25 @@ class NotificationScreen extends StatelessWidget {
           padding: const EdgeInsets.all(16),
           child: ListView(
             children: [
-              const Text(
-                'Notifikasi',
-                style: TextStyle(
-                  fontSize: AppFontSize.heading3,
-                  fontWeight: FontWeight.bold,
-                ),
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  const Text(
+                    'Notifikasi',
+                    style: TextStyle(
+                      fontSize: AppFontSize.heading3,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  IconButton(
+                    onPressed: () {},
+                    icon: const Icon(
+                      FontAwesomeIcons.eye,
+                      color: AppColors.black,
+                    ),
+                  ),
+                ],
               ),
               const SizedBox(
                 height: 24,

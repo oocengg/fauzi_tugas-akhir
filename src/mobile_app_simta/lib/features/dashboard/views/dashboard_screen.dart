@@ -31,14 +31,33 @@ class DashboardScreen extends StatelessWidget {
                         },
                         child: Column(
                           children: [
-                            Icon(
-                              index == dashboardProvider.selectedIndex
-                                  ? icon
-                                  : iconNotActive,
-                              size: 25,
-                              color: index == dashboardProvider.selectedIndex
-                                  ? AppColors.primary500
-                                  : AppColors.neutral600,
+                            Stack(
+                              children: [
+                                Icon(
+                                  index == dashboardProvider.selectedIndex
+                                      ? icon
+                                      : iconNotActive,
+                                  size: 25,
+                                  color:
+                                      index == dashboardProvider.selectedIndex
+                                          ? AppColors.primary500
+                                          : AppColors.neutral400,
+                                ),
+                                index == 2
+                                    ? Positioned(
+                                        top: 0,
+                                        right: 0,
+                                        child: Container(
+                                          width: 10,
+                                          height: 10,
+                                          decoration: const BoxDecoration(
+                                            color: AppColors.error500,
+                                            shape: BoxShape.circle,
+                                          ),
+                                        ),
+                                      )
+                                    : const SizedBox.shrink()
+                              ],
                             ),
                             const SizedBox(
                               height: 5,
@@ -48,7 +67,7 @@ class DashboardScreen extends StatelessWidget {
                               style: TextStyle(
                                 color: index == dashboardProvider.selectedIndex
                                     ? AppColors.primary500
-                                    : AppColors.neutral600,
+                                    : AppColors.neutral400,
                               ),
                             ),
                           ],

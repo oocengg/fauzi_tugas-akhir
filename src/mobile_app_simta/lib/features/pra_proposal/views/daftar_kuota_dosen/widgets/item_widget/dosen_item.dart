@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:mobile_app_simta/core/constant/colors.dart';
 import 'package:mobile_app_simta/core/constant/font_size.dart';
 
@@ -71,24 +72,38 @@ Widget dosenItem(
           const SizedBox(
             height: 8,
           ),
-          Container(
-            padding: const EdgeInsets.symmetric(
-              horizontal: 16,
-              vertical: 8,
-            ),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(26),
-              color:
-                  kuotaNow != kuota ? AppColors.success500 : AppColors.error500,
-            ),
-            child: Text(
-              '$kuotaNow / $kuota',
-              style: const TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: AppFontSize.heading5,
-                color: AppColors.white,
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              IconButton(
+                onPressed: () {},
+                icon: const Icon(
+                  FontAwesomeIcons.whatsapp,
+                  color: AppColors.success500,
+                  size: 30,
+                ),
               ),
-            ),
+              Container(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 16,
+                  vertical: 8,
+                ),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(26),
+                  color: kuotaNow != kuota
+                      ? AppColors.success500
+                      : AppColors.error500,
+                ),
+                child: Text(
+                  '$kuotaNow / $kuota',
+                  style: const TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: AppFontSize.heading5,
+                    color: AppColors.white,
+                  ),
+                ),
+              ),
+            ],
           )
         ],
       ),

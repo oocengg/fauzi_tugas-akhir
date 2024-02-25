@@ -36,7 +36,7 @@ class DaftarKuotaDosenScreen extends StatelessWidget {
             crossAxisCount: 2,
             mainAxisSpacing: 16,
             crossAxisSpacing: 16,
-            mainAxisExtent: 311,
+            mainAxisExtent: 314,
           ),
           itemCount: 8,
           shrinkWrap: true,

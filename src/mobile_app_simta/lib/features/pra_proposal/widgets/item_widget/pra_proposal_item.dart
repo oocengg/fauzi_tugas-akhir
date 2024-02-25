@@ -7,56 +7,95 @@ Widget praProposalItem(
   BuildContext context,
   String backgroundImage,
   String title,
+  String tahap,
   Function() onTap,
 ) {
   return GestureDetector(
     onTap: onTap,
-    child: Container(
-      padding: const EdgeInsets.all(20),
-      height: 170,
-      width: double.infinity,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(14),
-        color: AppColors.aqua100,
-        image: DecorationImage(
-          image: AssetImage(
-            backgroundImage,
-          ),
-          fit: BoxFit.cover,
-        ),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withOpacity(0.08),
-            spreadRadius: 0,
-            blurRadius: 20,
-            offset: const Offset(4, 4),
-          ),
-        ],
-      ),
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Flexible(
-            child: Text(
-              title,
-              style: const TextStyle(
-                fontSize: AppFontSize.heading4,
+    child: Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Row(
+          children: [
+            const Text(
+              'Tahap',
+              style: TextStyle(
+                fontSize: AppFontSize.caption,
                 fontWeight: FontWeight.bold,
-                color: AppColors.white,
+                color: AppColors.neutral400,
               ),
             ),
+            const SizedBox(
+              width: 8,
+            ),
+            Container(
+              padding: const EdgeInsets.all(6),
+              decoration: const BoxDecoration(
+                color: AppColors.neutral400,
+                shape: BoxShape.circle,
+              ),
+              child: Text(
+                tahap,
+                style: const TextStyle(
+                  fontSize: AppFontSize.caption,
+                  fontWeight: FontWeight.bold,
+                  color: AppColors.white,
+                ),
+              ),
+            ),
+          ],
+        ),
+        const SizedBox(
+          height: 8,
+        ),
+        Container(
+          padding: const EdgeInsets.all(20),
+          height: 170,
+          width: double.infinity,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(14),
+            color: AppColors.aqua100,
+            image: DecorationImage(
+              image: AssetImage(
+                backgroundImage,
+              ),
+              fit: BoxFit.cover,
+            ),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withOpacity(0.08),
+                spreadRadius: 0,
+                blurRadius: 20,
+                offset: const Offset(4, 4),
+              ),
+            ],
           ),
-          const SizedBox(
-            width: 16,
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Flexible(
+                child: Text(
+                  title,
+                  style: const TextStyle(
+                    fontSize: AppFontSize.heading4,
+                    fontWeight: FontWeight.bold,
+                    color: AppColors.white,
+                  ),
+                ),
+              ),
+              const SizedBox(
+                width: 16,
+              ),
+              const Icon(
+                FontAwesomeIcons.chevronRight,
+                size: 20,
+                color: AppColors.white,
+              )
+            ],
           ),
-          const Icon(
-            FontAwesomeIcons.chevronRight,
-            size: 20,
-            color: AppColors.white,
-          )
-        ],
-      ),
+        ),
+      ],
     ),
   );
 }

@@ -29,16 +29,40 @@ class NotificationSection extends StatelessWidget {
               children: [
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    const Text(
-                      'Notifikasi',
-                      style: TextStyle(
-                        fontSize: AppFontSize.heading4,
-                        fontWeight: FontWeight.bold,
-                        overflow: TextOverflow.ellipsis,
-                        color: AppColors.black,
-                      ),
-                      maxLines: 1,
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        const Text(
+                          'Notifikasi',
+                          style: TextStyle(
+                            fontSize: AppFontSize.heading4,
+                            fontWeight: FontWeight.bold,
+                            overflow: TextOverflow.ellipsis,
+                            color: AppColors.black,
+                          ),
+                          maxLines: 1,
+                        ),
+                        const SizedBox(
+                          width: 8,
+                        ),
+                        Container(
+                          padding: const EdgeInsets.all(6),
+                          decoration: const BoxDecoration(
+                            color: AppColors.error500,
+                            shape: BoxShape.circle,
+                          ),
+                          child: const Text(
+                            '20',
+                            style: TextStyle(
+                              fontSize: AppFontSize.caption,
+                              fontWeight: FontWeight.bold,
+                              color: AppColors.white,
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
                     GestureDetector(
                       onTap: () {

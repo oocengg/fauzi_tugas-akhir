@@ -16,18 +16,18 @@ class DashboardProvider with ChangeNotifier {
   // Icon
   final List icon = [
     FontAwesomeIcons.house,
-    FontAwesomeIcons.file,
-    FontAwesomeIcons.bell,
     FontAwesomeIcons.book,
-    FontAwesomeIcons.user,
+    FontAwesomeIcons.solidBell,
+    FontAwesomeIcons.graduationCap,
+    FontAwesomeIcons.solidUser,
   ];
 
   final List notActiveIcon = [
     FontAwesomeIcons.house,
-    FontAwesomeIcons.file,
-    FontAwesomeIcons.bell,
     FontAwesomeIcons.book,
-    FontAwesomeIcons.user,
+    FontAwesomeIcons.bell,
+    FontAwesomeIcons.graduationCap,
+    FontAwesomeIcons.solidUser,
   ];
 
   final List titleIcon = [

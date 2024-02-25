@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:mobile_app_simta/core/constant/colors.dart';
-import 'package:mobile_app_simta/features/pra_proposal/views/usulan_topik_dosen/daftar_kuota_dosen/widgets/item_widget/topik_item.dart';
+import 'package:mobile_app_simta/features/pra_proposal/views/usulan_topik_dosen/views/filter_topik_screen.dart';
+import 'package:mobile_app_simta/features/pra_proposal/views/usulan_topik_dosen/widgets/item_widget/topik_item.dart';
 
 class UsulanTopikDosenScreen extends StatelessWidget {
   const UsulanTopikDosenScreen({super.key});
@@ -26,6 +27,17 @@ class UsulanTopikDosenScreen extends StatelessWidget {
             color: AppColors.white,
           ),
         ),
+        actions: [
+          IconButton(
+            onPressed: () {
+              showFilter(context);
+            },
+            icon: const Icon(
+              FontAwesomeIcons.filter,
+              color: AppColors.white,
+            ),
+          ),
+        ],
         backgroundColor: AppColors.primary500,
         shadowColor: AppColors.black.withOpacity(0.2),
       ),
@@ -40,7 +52,7 @@ class UsulanTopikDosenScreen extends StatelessWidget {
               'Pengembangan',
               'Sudah Diambil',
               ['Mobile Dev', 'Mobile Dev'],
-              'Skripsi ini bertujuan untuk menganalisis bagaimana penggunaan fitur notifikasi dalam aplikasi mobile berbasis Flutter dapat mempengaruhi efisiensi dalam manajemen tugas akhir. Penelitian ini akan mengeksplorasi apakah pemberian notifikasi kepada pengguna aplikasi secara tepat waktu dan relevan dapat meningkatkan kesadaran, partisipasi, dan kepatuhan terhadap tenggat waktu dan tanggung jawab terkait tugas akhir. Hasil dari penelitian ini diharapkan dapat memberikan wawasan berharga dalam pengembangan aplikasi manajemen tugas akhir berbasis mobile untuk mendukung mahasiswa dalam menyelesaikan tugas akhir mereka dengan lebih efisien.',
+              'Skripsi ini bertujuan untuk menganalisis bagaimana penggunaan fitur notifikasi dalam aplikasi mobile berbasis Flutter dapat mempengaruhi efisiensi dalam manajemen tugas akhir. Penelitian ini akan mengeksplorasi apakah pemberian notifikasi kepada pengguna aplikasi secara tepat waktu dan relevan dapat meningkatkan kesadaran, partisipasi, dan kepatuhan terhadap tenggat waktu dan tanggung jawab terkait tugas akhir. Hasil dari penelitian ini diharapkan dapat memberikan wawasan berharga dalam pengembangan aplikasi manajemen tugas akhir berbasis mobile untuk mendukung mahasiswa dalam menyelesaikan tugas akhir mereka dengan lebih efisien.\n\nSkripsi ini bertujuan untuk menganalisis bagaimana penggunaan fitur notifikasi dalam aplikasi mobile berbasis Flutter dapat mempengaruhi efisiensi dalam manajemen tugas akhir. Penelitian ini akan mengeksplorasi apakah pemberian notifikasi kepada pengguna aplikasi secara tepat waktu dan relevan dapat meningkatkan kesadaran, partisipasi, dan kepatuhan terhadap tenggat waktu dan tanggung jawab terkait tugas akhir. Hasil dari penelitian ini diharapkan dapat memberikan wawasan berharga dalam pengembangan aplikasi manajemen tugas akhir berbasis mobile untuk mendukung mahasiswa dalam menyelesaikan tugas akhir mereka dengan lebih efisien.',
             ),
             const SizedBox(
               height: 16,
@@ -83,6 +95,17 @@ class UsulanTopikDosenScreen extends StatelessWidget {
           ],
         ),
       ),
+    );
+  }
+
+  void showFilter(BuildContext context) {
+    showModalBottomSheet(
+      context: context,
+      isDismissible: false,
+      isScrollControlled: true,
+      builder: (BuildContext context) {
+        return const FilterTopikScreen();
+      },
     );
   }
 }
