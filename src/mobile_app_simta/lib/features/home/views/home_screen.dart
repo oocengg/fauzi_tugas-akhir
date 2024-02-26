@@ -18,13 +18,17 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  onInitCalled() {
+    context.read<HeadingProvider>().getHeadingData();
+    context.read<NewsProvider>().getNewsData();
+    context.read<NotificationProvider>().getNotificationData();
+    context.read<BimbinganProvider>().getBimbinganData();
+  }
+
   @override
   void initState() {
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      context.read<HeadingProvider>().getHeadingData();
-      context.read<NewsProvider>().getNewsData();
-      context.read<NotificationProvider>().getNotificationData();
-      context.read<BimbinganProvider>().getBimbinganData();
+      onInitCalled();
     });
 
     super.initState();
@@ -33,31 +37,36 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView(
-        child: Stack(
-          children: [
-            Container(
-              height: 290,
-              color: AppColors.primary500,
-            ),
-            const Column(
-              children: [
-                HeadingSection(),
-                NewsSection(),
-                SizedBox(
-                  height: 24,
-                ),
-                NotificationSection(),
-                SizedBox(
-                  height: 24,
-                ),
-                BimbinganSection(),
-                SizedBox(
-                  height: 24,
-                ),
-              ],
-            ),
-          ],
+      body: RefreshIndicator(
+        onRefresh: () async {
+          onInitCalled();
+        },
+        child: SingleChildScrollView(
+          child: Stack(
+            children: [
+              Container(
+                height: 290,
+                color: AppColors.primary500,
+              ),
+              const Column(
+                children: [
+                  HeadingSection(),
+                  NewsSection(),
+                  SizedBox(
+                    height: 24,
+                  ),
+                  NotificationSection(),
+                  SizedBox(
+                    height: 24,
+                  ),
+                  BimbinganSection(),
+                  SizedBox(
+                    height: 24,
+                  ),
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );

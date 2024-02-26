@@ -11,7 +11,10 @@ class DashboardScreen extends StatelessWidget {
     return Consumer<DashboardProvider>(
       builder: (context, dashboardProvider, _) {
         return Scaffold(
-          body: dashboardProvider.pages[dashboardProvider.selectedIndex],
+          body: IndexedStack(
+            index: dashboardProvider.selectedIndex,
+            children: dashboardProvider.pages,
+          ),
           bottomNavigationBar: BottomAppBar(
             height: 75,
             child: Center(
