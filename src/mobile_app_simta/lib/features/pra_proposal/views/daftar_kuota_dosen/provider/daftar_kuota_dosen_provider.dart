@@ -1,27 +1,27 @@
 import 'package:flutter/material.dart';
 import 'package:mobile_app_simta/core/state/finite_state.dart';
 
-class BimbinganProvider with ChangeNotifier {
-  AppState bimbinganState = AppState.loading;
+class DaftarKuotaDosenProvider with ChangeNotifier {
+  AppState daftarKutoaDosenState = AppState.loading;
 
   // List<FaqResponseModel> faqData = [];
 
   // HomeService homeService = HomeService();
 
-  // Eksekusi fungsi dari bimbingasn service untuk ambil Bimbingan
-  void getBimbinganData() async {
+  // Eksekusi fungsi dari daftar kutoa dosen service untuk ambil Data
+  void getDaftarKuotaDosenData() async {
     try {
-      bimbinganState = AppState.loading;
+      daftarKutoaDosenState = AppState.loading;
       notifyListeners();
 
       // faqData = await homeaService.getFaq();
 
       await Future.delayed(const Duration(seconds: 2));
 
-      bimbinganState = AppState.loaded;
+      daftarKutoaDosenState = AppState.loaded;
       notifyListeners();
     } catch (e) {
-      bimbinganState = AppState.failed;
+      daftarKutoaDosenState = AppState.failed;
       notifyListeners();
     }
   }
