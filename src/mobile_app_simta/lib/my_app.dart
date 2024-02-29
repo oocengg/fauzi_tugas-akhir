@@ -57,7 +57,6 @@ class MyApp extends StatelessWidget {
         theme: ThemeData().copyWith(
           colorScheme: ColorScheme.fromSeed(
             seedColor: AppColors.primary500,
-            brightness: Brightness.dark,
           ),
           scaffoldBackgroundColor: Colors.white,
           textTheme: GoogleFonts.robotoTextTheme(

@@ -4,7 +4,7 @@ import 'package:mobile_app_simta/core/constant/colors.dart';
 import 'package:mobile_app_simta/core/state/finite_state.dart';
 import 'package:mobile_app_simta/features/pra_proposal/views/daftar_kuota_dosen/provider/daftar_kuota_dosen_provider.dart';
 import 'package:mobile_app_simta/features/pra_proposal/views/daftar_kuota_dosen/widgets/item_widget/dosen_item.dart';
-import 'package:mobile_app_simta/features/pra_proposal/views/daftar_kuota_dosen/widgets/loading_screen.dart/daftar_kuota_dosen_loading.dart';
+import 'package:mobile_app_simta/features/pra_proposal/views/daftar_kuota_dosen/widgets/loading_screen/daftar_kuota_dosen_loading.dart';
 import 'package:provider/provider.dart';
 
 class DaftarKuotaDosenScreen extends StatefulWidget {

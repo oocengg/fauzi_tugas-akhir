@@ -1,3 +1,4 @@
+import 'package:dropdown_search/dropdown_search.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:mobile_app_simta/core/constant/colors.dart';
@@ -83,42 +84,104 @@ class _FilterTopikScreenState extends State<FilterTopikScreen> {
                     const SizedBox(
                       height: 8,
                     ),
-                    DropdownButtonFormField<String>(
-                      value: usulanTopikDosenProvider.dosenPengusul,
-                      onChanged: (String? newValue) => setState(() =>
-                          usulanTopikDosenProvider.dosenPengusul =
-                              newValue ?? ''),
-                      items: usulanTopikDosenProvider.listDosenPengusul
-                          .map<DropdownMenuItem<String>>(
-                            (String value) => DropdownMenuItem<String>(
-                              value: value,
-                              child: Text(value),
-                            ),
-                          )
-                          .toList(),
-                      icon: const Icon(FontAwesomeIcons.chevronDown),
-                      iconSize: 20,
-                      decoration: InputDecoration(
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(14),
-                        ),
-                        enabledBorder: OutlineInputBorder(
-                          borderSide:
-                              const BorderSide(color: Colors.transparent),
-                          borderRadius: BorderRadius.circular(14),
-                        ),
-                        focusedBorder: OutlineInputBorder(
-                          borderSide:
-                              const BorderSide(color: Colors.transparent),
-                          borderRadius: BorderRadius.circular(14),
-                        ),
-                        contentPadding: const EdgeInsets.all(16),
-                        fillColor: AppColors.neutral50,
-                        filled: true,
+                    DropdownSearch<String>(
+                      popupProps: PopupProps.menu(
+                        showSelectedItems: true,
+                        searchFieldProps: TextFieldProps(
+                            decoration: InputDecoration(
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(14),
+                          ),
+                          enabledBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                                color: Colors.black.withOpacity(0.4)),
+                            borderRadius: BorderRadius.circular(14),
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                                color: Colors.black.withOpacity(0.4)),
+                            borderRadius: BorderRadius.circular(14),
+                          ),
+                          contentPadding: const EdgeInsets.all(16),
+                          fillColor: AppColors.white,
+                          filled: true,
+                          hintText: 'Cari',
+                        )),
+                        showSearchBox: true,
+                        isFilterOnline: true,
                       ),
-                      isExpanded: true,
-                      hint: const Text('Pilih Dosen'),
+                      items: usulanTopikDosenProvider.listDosenPengusul,
+                      dropdownDecoratorProps: DropDownDecoratorProps(
+                        dropdownSearchDecoration: InputDecoration(
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(14),
+                          ),
+                          enabledBorder: OutlineInputBorder(
+                            borderSide:
+                                const BorderSide(color: Colors.transparent),
+                            borderRadius: BorderRadius.circular(14),
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            borderSide:
+                                const BorderSide(color: Colors.transparent),
+                            borderRadius: BorderRadius.circular(14),
+                          ),
+                          contentPadding: const EdgeInsets.all(16),
+                          fillColor: AppColors.neutral50,
+                          filled: true,
+                          hintText: 'Pilih Dosen',
+                        ),
+                      ),
+
+                      itemAsString: (String? item) =>
+                          item ??
+                          '', // Provide a function to convert items to strings
+                      onChanged: (String? newValue) {
+                        setState(() {
+                          usulanTopikDosenProvider.dosenPengusul =
+                              newValue ?? '';
+                        });
+                      },
                     ),
+
+                    // Last Dropdown
+                    // DropdownButtonFormField<String>(
+                    //   value: usulanTopikDosenProvider.dosenPengusul,
+                    //   onChanged: (String? newValue) => setState(() =>
+                    //       usulanTopikDosenProvider.dosenPengusul =
+                    //           newValue ?? ''),
+                    //   items: usulanTopikDosenProvider.listDosenPengusul
+                    //       .map<DropdownMenuItem<String>>(
+                    //         (String value) => DropdownMenuItem<String>(
+                    //           value: value,
+                    //           child: Text(value),
+                    //         ),
+                    //       )
+                    //       .toList(),
+                    //   icon: const Icon(FontAwesomeIcons.chevronDown),
+                    //   iconSize: 20,
+                    //   decoration: InputDecoration(
+                    //     border: OutlineInputBorder(
+                    //       borderRadius: BorderRadius.circular(14),
+                    //     ),
+                    //     enabledBorder: OutlineInputBorder(
+                    //       borderSide:
+                    //           const BorderSide(color: Colors.transparent),
+                    //       borderRadius: BorderRadius.circular(14),
+                    //     ),
+                    //     focusedBorder: OutlineInputBorder(
+                    //       borderSide:
+                    //           const BorderSide(color: Colors.transparent),
+                    //       borderRadius: BorderRadius.circular(14),
+                    //     ),
+                    //     contentPadding: const EdgeInsets.all(16),
+                    //     fillColor: AppColors.neutral50,
+                    //     filled: true,
+                    //   ),
+                    //   isExpanded: true,
+                    //   hint: const Text('Pilih Dosen'),
+                    // ),
+
                     const SizedBox(
                       height: 16,
                     ),
@@ -146,13 +209,23 @@ class _FilterTopikScreenState extends State<FilterTopikScreen> {
                                         newValue ?? ''),
                                 items: usulanTopikDosenProvider.listJenisTopik
                                     .map<DropdownMenuItem<String>>(
-                                        (String value) =>
-                                            DropdownMenuItem<String>(
-                                              value: value,
-                                              child: Text(value),
-                                            ))
+                                      (String value) =>
+                                          DropdownMenuItem<String>(
+                                        value: value,
+                                        child: Text(
+                                          value,
+                                          style: const TextStyle(
+                                            fontSize: AppFontSize.caption,
+                                            fontWeight: FontWeight.normal,
+                                          ),
+                                        ),
+                                      ),
+                                    )
                                     .toList(),
-                                icon: const Icon(FontAwesomeIcons.chevronDown),
+                                icon: const Icon(
+                                  Icons.arrow_drop_down,
+                                  color: AppColors.black,
+                                ),
                                 decoration: InputDecoration(
                                   border: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(14),
@@ -171,7 +244,7 @@ class _FilterTopikScreenState extends State<FilterTopikScreen> {
                                   fillColor: AppColors.neutral50,
                                   filled: true,
                                 ),
-                                iconSize: 20,
+                                iconSize: 23,
                                 isExpanded: true,
                                 hint: const Text('Pilih Jenis'),
                               ),
@@ -205,10 +278,19 @@ class _FilterTopikScreenState extends State<FilterTopikScreen> {
                                         (String value) =>
                                             DropdownMenuItem<String>(
                                               value: value,
-                                              child: Text(value),
+                                              child: Text(
+                                                value,
+                                                style: const TextStyle(
+                                                  fontSize: AppFontSize.caption,
+                                                  fontWeight: FontWeight.normal,
+                                                ),
+                                              ),
                                             ))
                                     .toList(),
-                                icon: const Icon(FontAwesomeIcons.chevronDown),
+                                icon: const Icon(
+                                  Icons.arrow_drop_down,
+                                  color: AppColors.black,
+                                ),
                                 decoration: InputDecoration(
                                   border: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(14),
@@ -227,7 +309,7 @@ class _FilterTopikScreenState extends State<FilterTopikScreen> {
                                   fillColor: AppColors.neutral50,
                                   filled: true,
                                 ),
-                                iconSize: 20,
+                                iconSize: 23,
                                 isExpanded: true,
                                 hint: const Text('Pilih Ketersediaan'),
                               ),

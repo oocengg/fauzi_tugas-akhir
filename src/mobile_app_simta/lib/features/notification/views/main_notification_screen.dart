@@ -63,7 +63,9 @@ class _MainNotificationScreenState extends State<MainNotificationScreen> {
                             ),
                           ),
                           IconButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              warningReadNotification(context);
+                            },
                             icon: const Icon(
                               FontAwesomeIcons.eye,
                               color: AppColors.black,
@@ -88,6 +90,7 @@ class _MainNotificationScreenState extends State<MainNotificationScreen> {
                         'Topik Skripsi',
                         'Topik yang kamu ajukan telah disetujui oleh dosen pembimbing yang bersangkutan.',
                         '2 Jam',
+                        false,
                       ),
                       const SizedBox(
                         height: 16,
@@ -106,6 +109,7 @@ class _MainNotificationScreenState extends State<MainNotificationScreen> {
                         'Topik Skripsi',
                         'Topik yang kamu ajukan telah disetujui oleh dosen pembimbing yang bersangkutan.',
                         '2 Jam',
+                        false,
                       ),
                       const SizedBox(
                         height: 8,
@@ -114,6 +118,7 @@ class _MainNotificationScreenState extends State<MainNotificationScreen> {
                         'Topik Skripsi',
                         'Topik yang kamu ajukan telah disetujui oleh dosen pembimbing yang bersangkutan.',
                         '2 Jam',
+                        true,
                       ),
                       const SizedBox(
                         height: 16,
@@ -132,6 +137,7 @@ class _MainNotificationScreenState extends State<MainNotificationScreen> {
                         'Topik Skripsi',
                         'Topik yang kamu ajukan telah disetujui oleh dosen pembimbing yang bersangkutan.',
                         '2 Jam',
+                        false,
                       ),
                       const SizedBox(
                         height: 8,
@@ -140,6 +146,7 @@ class _MainNotificationScreenState extends State<MainNotificationScreen> {
                         'Topik Skripsi',
                         'Topik yang kamu ajukan telah disetujui oleh dosen pembimbing yang bersangkutan.',
                         '2 Jam',
+                        false,
                       ),
                       const SizedBox(
                         height: 8,
@@ -148,6 +155,7 @@ class _MainNotificationScreenState extends State<MainNotificationScreen> {
                         'Topik Skripsi',
                         'Topik yang kamu ajukan telah disetujui oleh dosen pembimbing yang bersangkutan.',
                         '2 Jam',
+                        true,
                       ),
                       const SizedBox(
                         height: 8,
@@ -156,6 +164,7 @@ class _MainNotificationScreenState extends State<MainNotificationScreen> {
                         'Topik Skripsi',
                         'Topik yang kamu ajukan telah disetujui oleh dosen pembimbing yang bersangkutan.',
                         '2 Jam',
+                        true,
                       ),
                     ],
                   ),
@@ -167,6 +176,55 @@ class _MainNotificationScreenState extends State<MainNotificationScreen> {
           ),
         ),
       ),
+    );
+  }
+
+  warningReadNotification(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: const Text(
+            'Baca Notifikasi',
+            style: TextStyle(
+              fontSize: AppFontSize.heading3,
+            ),
+          ),
+          content: const Text(
+            'Apakah Anda yakin ingin menandai semua notifikasi sebagai sudah dibaca?',
+            style: TextStyle(
+              fontSize: AppFontSize.text,
+            ),
+          ),
+          actions: <Widget>[
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              child: const Text(
+                'Batal',
+                style: TextStyle(color: AppColors.error500),
+              ),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                // Tambahkan logika untuk menandai notifikasi sebagai sudah dibaca di sini
+                // Misalnya: markAllNotificationsAsRead();
+                Navigator.of(context).pop();
+              },
+              style: const ButtonStyle(
+                backgroundColor: MaterialStatePropertyAll(
+                  AppColors.primary500,
+                ),
+              ),
+              child: const Text(
+                'Baca Semua',
+                style: TextStyle(color: AppColors.white),
+              ),
+            ),
+          ],
+        );
+      },
     );
   }
 }

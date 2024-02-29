@@ -12,42 +12,8 @@ Widget praProposalItem(
 ) {
   return GestureDetector(
     onTap: onTap,
-    child: Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
+    child: Stack(
       children: [
-        Row(
-          children: [
-            const Text(
-              'Tahap',
-              style: TextStyle(
-                fontSize: AppFontSize.caption,
-                fontWeight: FontWeight.bold,
-                color: AppColors.neutral400,
-              ),
-            ),
-            const SizedBox(
-              width: 8,
-            ),
-            Container(
-              padding: const EdgeInsets.all(6),
-              decoration: const BoxDecoration(
-                color: AppColors.neutral400,
-                shape: BoxShape.circle,
-              ),
-              child: Text(
-                tahap,
-                style: const TextStyle(
-                  fontSize: AppFontSize.caption,
-                  fontWeight: FontWeight.bold,
-                  color: AppColors.white,
-                ),
-              ),
-            ),
-          ],
-        ),
-        const SizedBox(
-          height: 8,
-        ),
         Container(
           padding: const EdgeInsets.all(20),
           height: 170,
@@ -95,6 +61,18 @@ Widget praProposalItem(
             ],
           ),
         ),
+        Positioned(
+          bottom: 8,
+          left: 24,
+          child: Text(
+            tahap,
+            style: TextStyle(
+              fontSize: AppFontSize.heading1,
+              fontWeight: FontWeight.bold,
+              color: AppColors.white.withOpacity(0.5),
+            ),
+          ),
+        )
       ],
     ),
   );

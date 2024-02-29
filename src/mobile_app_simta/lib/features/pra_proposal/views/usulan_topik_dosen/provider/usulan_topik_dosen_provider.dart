@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mobile_app_simta/core/state/finite_state.dart';
 
 class UsulanTopikDosenProvider with ChangeNotifier {
+  AppState usulanTopikDosenState = AppState.loading;
   AppState applyFilterState = AppState.initial;
 
   // List<FaqResponseModel> faqData = [];
@@ -32,22 +33,22 @@ class UsulanTopikDosenProvider with ChangeNotifier {
   String? ketersediaan;
 
   // Eksekusi fungsi dari bimbingasn service untuk ambil Data Bimbingan
-  // void getLogBimbinganData() async {
-  //   try {
-  //     logBimbinganState = AppState.loading;
-  //     notifyListeners();
+  void getUsulanTopikDosenData() async {
+    try {
+      usulanTopikDosenState = AppState.loading;
+      notifyListeners();
 
-  //     // faqData = await homeService.getFaq();
+      // faqData = await homeService.getFaq();
 
-  //     await Future.delayed(const Duration(seconds: 2));
+      await Future.delayed(const Duration(seconds: 2));
 
-  //     logBimbinganState = AppState.loaded;
-  //     notifyListeners();
-  //   } catch (e) {
-  //     logBimbinganState = AppState.failed;
-  //     notifyListeners();
-  //   }
-  // }
+      usulanTopikDosenState = AppState.loaded;
+      notifyListeners();
+    } catch (e) {
+      usulanTopikDosenState = AppState.failed;
+      notifyListeners();
+    }
+  }
 
   // Fungsi untukMenerapkanFilter
   Future<void> applyFilter(BuildContext context) async {
@@ -59,6 +60,7 @@ class UsulanTopikDosenProvider with ChangeNotifier {
 
       if (context.mounted) {
         Navigator.pop(context);
+        getUsulanTopikDosenData();
       }
 
       applyFilterState = AppState.loaded;
