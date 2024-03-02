@@ -79,7 +79,9 @@ class _UjianSeminarProposalScreenState
                       const SizedBox(
                         height: 53,
                       ),
-                      const Divider(),
+                      const Divider(
+                        color: AppColors.neutral100,
+                      ),
                       ujianSeminarProposalProvider.selectedIndex == 0
                           ? const JadwalSeminarProposalSection()
                           : ujianSeminarProposalProvider.selectedIndex == 1

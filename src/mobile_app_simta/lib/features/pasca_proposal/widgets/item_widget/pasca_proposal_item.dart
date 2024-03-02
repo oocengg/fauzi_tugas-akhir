@@ -7,50 +7,71 @@ Widget pascaProposalItem(
   BuildContext context,
   String backgroundImage,
   String title,
+  String tahap,
+  Function() onTap,
 ) {
-  return Container(
-    padding: const EdgeInsets.all(20),
-    height: 170,
-    width: double.infinity,
-    decoration: BoxDecoration(
-      borderRadius: BorderRadius.circular(14),
-      color: AppColors.aqua100,
-      image: DecorationImage(
-        image: AssetImage(
-          backgroundImage,
-        ),
-        fit: BoxFit.cover,
-      ),
-      boxShadow: [
-        BoxShadow(
-          color: Colors.black.withOpacity(0.08),
-          spreadRadius: 0,
-          blurRadius: 20,
-          offset: const Offset(4, 4),
-        ),
-      ],
-    ),
-    child: Row(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+  return GestureDetector(
+    onTap: onTap,
+    child: Stack(
       children: [
-        Flexible(
-          child: Text(
-            title,
-            style: const TextStyle(
-              fontSize: AppFontSize.heading4,
-              fontWeight: FontWeight.bold,
-              color: AppColors.white,
+        Container(
+          padding: const EdgeInsets.all(20),
+          height: 170,
+          width: double.infinity,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(14),
+            color: AppColors.aqua100,
+            image: DecorationImage(
+              image: AssetImage(
+                backgroundImage,
+              ),
+              fit: BoxFit.cover,
             ),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withOpacity(0.08),
+                spreadRadius: 0,
+                blurRadius: 20,
+                offset: const Offset(4, 4),
+              ),
+            ],
+          ),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Flexible(
+                child: Text(
+                  title,
+                  style: const TextStyle(
+                    fontSize: AppFontSize.heading4,
+                    fontWeight: FontWeight.bold,
+                    color: AppColors.white,
+                  ),
+                ),
+              ),
+              const SizedBox(
+                width: 16,
+              ),
+              const Icon(
+                FontAwesomeIcons.chevronRight,
+                size: 20,
+                color: AppColors.white,
+              )
+            ],
           ),
         ),
-        const SizedBox(
-          width: 16,
-        ),
-        const Icon(
-          FontAwesomeIcons.chevronRight,
-          size: 20,
-          color: AppColors.white,
+        Positioned(
+          bottom: 8,
+          left: 24,
+          child: Text(
+            tahap,
+            style: TextStyle(
+              fontSize: AppFontSize.heading1,
+              fontWeight: FontWeight.bold,
+              color: AppColors.white.withOpacity(0.5),
+            ),
+          ),
         )
       ],
     ),

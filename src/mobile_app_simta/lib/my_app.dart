@@ -10,6 +10,7 @@ import 'package:mobile_app_simta/features/home/provider/news_provider.dart';
 import 'package:mobile_app_simta/features/home/provider/notification_provider.dart';
 import 'package:mobile_app_simta/features/home/views/log_bimbingan/provider/log_bimbingan_provider.dart';
 import 'package:mobile_app_simta/features/notification/provider/main_notification_provider.dart';
+import 'package:mobile_app_simta/features/pasca_proposal/views/skripsi_saya/provider/skripsi_saya_provider.dart';
 import 'package:mobile_app_simta/features/pra_proposal/views/daftar_kuota_dosen/provider/daftar_kuota_dosen_provider.dart';
 import 'package:mobile_app_simta/features/pra_proposal/views/pendaftaran_seminar_proposal/provider/pendaftaran_seminar_proposal_provider.dart';
 import 'package:mobile_app_simta/features/pra_proposal/views/proposal_saya/provider/proposal_saya_provider.dart';
@@ -25,6 +26,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
+        // Home Screen Provider
         ChangeNotifierProvider(
           create: (context) => DashboardProvider(),
         ),
@@ -43,6 +45,8 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(
           create: (context) => LogBimbinganProvider(),
         ),
+
+        // Pra Proposal Screen
         ChangeNotifierProvider(
           create: (context) => UsulanTopikDosenProvider(),
         ),
@@ -60,6 +64,11 @@ class MyApp extends StatelessWidget {
         ),
         ChangeNotifierProvider(
           create: (context) => UjianSeminarProposalProvider(),
+        ),
+
+        // Pasca Proposal Provider
+        ChangeNotifierProvider(
+          create: (context) => SkripsiSayaProvider(),
         ),
       ],
       child: MaterialApp(
